@@ -1,4 +1,4 @@
-name: Terraform AKS Infrastructure
+name: Terraform AKS Infrastructures
 
 on:
   workflow_dispatch:
