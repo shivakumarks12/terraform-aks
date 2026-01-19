@@ -23,7 +23,7 @@ variable "aks_name" {
 }
 
 variable "acr_name" {
-  description = "ACR name prefix (must be globally unique)"
+  description = "ACR name (must be globally unique)"
   type        = string
-  default     = "acrdevops"
+  default     = "acrdevopsks"
 }
