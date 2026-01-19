@@ -7,17 +7,10 @@ resource "azurerm_resource_group" "rg" {
 }
 
 # -----------------------------
-# Random suffix (for ACR + KV)
-# -----------------------------
-resource "random_id" "suffix" {
-  byte_length = 4
-}
-
-# -----------------------------
 # Azure Container Registry
 # -----------------------------
 resource "azurerm_container_registry" "acr" {
-  name                = "${var.acr_name_prefix}${random_id.suffix.hex}"
+  name                = "acrdevopsdemoks"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   sku                 = "Basic"
@@ -30,7 +23,7 @@ resource "azurerm_container_registry" "acr" {
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_key_vault" "kv" {
-  name                        = "kv-devops-${random_id.suffix.hex}"
+  name                        = "kv-devops-demoks"
   location                    = azurerm_resource_group.rg.location
   resource_group_name         = azurerm_resource_group.rg.name
   tenant_id                   = data.azurerm_client_config.current.tenant_id

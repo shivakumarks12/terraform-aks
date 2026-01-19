@@ -22,7 +22,7 @@ variable "aks_name" {
   default     = "devops-aks"
 }
 
-variable "acr_name_prefix" {
+variable "acr_name" {
   description = "ACR name prefix (must be globally unique)"
   type        = string
   default     = "acrdevops"
